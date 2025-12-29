@@ -8,6 +8,7 @@ local change_defender_secondary_down_hotkey_id = Obslua.OBS_INVALID_HOTKEY_ID
 local attacker_file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/attacker_secondary.txt"
 local defender_file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/defender_secondary.txt"
 
+-- ========== ATTACKER SECONDARY ========== --
 -- Reads the text file attacker_secondary.txt and changes its secondary up --
 local function change_attacker_secondary_up()
     local file = io.open(attacker_file_path, "w")
@@ -45,6 +46,7 @@ local function on_change_attacker_secondary_down_hotkey(pressed)
     change_attacker_secondary_down()
 end
 
+-- ========== DEFENDER SECONDARY ========== --
 -- Reads the text file defender_secondary.txt and changes its secondary up --
 local function change_defender_secondary_up()
     local file = io.open(defender_file_path, "w")
@@ -82,9 +84,10 @@ local function on_change_defender_secondary_down_hotkey(pressed)
     change_defender_secondary_down()
 end
 
+-- ========== CONFIGURATION ========== --
 -- This is the name and description that will be displayed in OBS -> Settings -> Hotkeys --
 function script_load(settings)
-    -- Attacker's Secondary Mission
+    -- ATTACKER SECONDARY
     change_attacker_secondary_up_hotkey_id = Obslua.obs_hotkey_register_frontend(
         "change_attacker_secondary_up_hotkey",
         "[Warhammer] Change Attacker Secondary Up",
@@ -105,7 +108,7 @@ function script_load(settings)
     Obslua.obs_hotkey_load(change_attacker_secondary_down_hotkey_id, change_attacker_secondary_down_hotkey_array)
     Obslua.obs_data_array_release(change_attacker_secondary_down_hotkey_array)
 
-    -- Defender's Secondary Mission
+    -- DEFENDER SECONDARY
     change_defender_secondary_up_hotkey_id = Obslua.obs_hotkey_register_frontend(
         "change_defender_secondary_up_hotkey",
         "[Warhammer] Change Defender Secondary Up",
@@ -129,11 +132,11 @@ function script_load(settings)
 end
 
 function script_description()
-    return "Secondary Mission – Changes the Attacker's and Defender's Secondary Mission Up and Down in data/attacker_secondary.txt"
+    return "Secondary Mission – Changes the Attacker's and Defender's Secondary Mission Up and Down."
 end
 
 function script_save(settings)
-    -- Attacker's Secondary Mission
+    -- ATTACKER SECONDARY
     local change_attacker_secondary_up_hotkey_array = Obslua.obs_hotkey_save(change_attacker_secondary_up_hotkey_id)
     Obslua.obs_data_set_array(settings, "change_attacker_secondary_up_hotkey", change_attacker_secondary_up_hotkey_array)
     Obslua.obs_data_array_release(change_attacker_secondary_up_hotkey_array)
@@ -142,7 +145,7 @@ function script_save(settings)
     Obslua.obs_data_set_array(settings, "change_attacker_secondary_down_hotkey", change_attacker_secondary_down_hotkey_array)
     Obslua.obs_data_array_release(change_attacker_secondary_down_hotkey_array)
 
-    -- Defender's Secondary Mission
+    -- DEFENDER SECONDARY
     local change_defender_secondary_up_hotkey_array = Obslua.obs_hotkey_save(change_defender_secondary_up_hotkey_id)
     Obslua.obs_data_set_array(settings, "change_defender_secondary_up_hotkey", change_defender_secondary_up_hotkey_array)
     Obslua.obs_data_array_release(change_defender_secondary_up_hotkey_array)

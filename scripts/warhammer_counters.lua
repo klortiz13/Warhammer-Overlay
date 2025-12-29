@@ -1,9 +1,9 @@
 Obslua = Obslua or require("obslua")
 local Global = require("global_variables")
 -- Change paths accordingly --
-local battle_round_file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/round_counter.txt"
-local attacker_cp_file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/attacker_CP.txt"
-local defender_cp_file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/defender_CP.txt"
+local battle_round_file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/battle_round.txt"
+local attacker_cp_file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/attacker_cp.txt"
+local defender_cp_file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/defender_cp.txt"
 
 -- ========== BATTLE ROUND ========== --
 local increment_hotkey_id = Obslua.OBS_INVALID_HOTKEY_ID
@@ -236,7 +236,7 @@ function script_description()
     -- "Battle Round – increments and resets the Battle Round counter in data/round_counter.txt"
     -- "Attacker CP – increments and resets the Attacker's CP located in data/attacker_CP.txt"
     -- "Defender CP – increments and resets the Defender's CP in data/defender_CP.txt"
-    return "Warhammer Counters - Increments and resets the Battle Round, Attacker's CP and Defender's CP."
+    return "Warhammer Counters - Increments and resets the Battle Round, Attacker's CP, and Defender's CP."
 end
 
 function script_save(settings)

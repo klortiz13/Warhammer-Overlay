@@ -3,11 +3,11 @@ local Global = require("global_variables")
 local change_up_hotkey_id = Obslua.OBS_INVALID_HOTKEY_ID
 local change_down_hotkey_id = Obslua.OBS_INVALID_HOTKEY_ID
 -- Change paths accordingly --
-local file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/primary_mission.txt"
+local primary_file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/primary.txt"
 
 -- Reads the text file primary_mission.txt and increments its primary up --
 local function change_primary_mission_up()
-    local file = io.open(file_path, "w")
+    local file = io.open(primary_file_path, "w")
     if not file then
         print("Could not write file")
         return
@@ -25,7 +25,7 @@ end
 
 -- Reads the text file primary_mission.txt and decrements its primary down --
 local function change_primary_mission_down()
-    local file = io.open(file_path, "w")
+    local file = io.open(primary_file_path, "w")
     if not file then
         print("Could not write file")
         return
@@ -41,6 +41,7 @@ local function on_change_primary_mission_down_hotkey(pressed)
     change_primary_mission_down()
 end
 
+-- ========== CONFIGURATION ========== --
 -- This is the name and description that will be displayed in OBS -> Settings -> Hotkeys --
 function script_load(settings)
     change_up_hotkey_id = Obslua.obs_hotkey_register_frontend(
@@ -65,7 +66,7 @@ function script_load(settings)
 end
 
 function script_description()
-    return "Primary Mission – Changes the Primary Mission Up and Down in data/primary_mission.txt"
+    return "Primary Mission – Changes the Primary Mission Up and Down."
 end
 
 function script_save(settings)
