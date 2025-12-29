@@ -23,3 +23,4 @@
 ### Notes
 1. If an error occurs or the script didn't load, try removing it and adding it again or closing OBS and opening it again (sometimes it just needs to restart).
 2. If the text file is not changing, try checking the `local file_path` vvariable to ensure it is pointing to that target text file.
+3. How to guide: https://youtu.be/hTX5cqNflUs?si=EGeqGLVPYWGe6cSW
