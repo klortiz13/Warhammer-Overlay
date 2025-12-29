@@ -58,7 +58,7 @@ end
 function script_load(settings)
     hotkey_increment_id = Obslua.obs_hotkey_register_frontend(
         "increment_attacker_cp_hotkey",
-        "[From Lua Script] Attacker CP",
+        "[Warhammer] Increment Attacker CP",
         on_increment_hotkey
     )
 
@@ -68,7 +68,7 @@ function script_load(settings)
     
     hotkey_reset_id = Obslua.obs_hotkey_register_frontend(
         "reset_attacker_cp_hotkey",
-        "[From Lua Script] Reset Attacker CP",
+        "[Warhammer] Reset Attacker CP",
         on_reset_hotkey
     )
 
