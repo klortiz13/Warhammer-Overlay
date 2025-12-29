@@ -38,7 +38,8 @@ M.Secondaries = {
     "EXTEND BATTLE LINES"
 }
 M.SecondarySize = #M.Secondaries
-M.SecondaryIndex = 1
+M.SecondaryAttackerIndex = 1
+M.SecondaryDefenderIndex = 1
 
 -- Global variables for the counter files
 M.AttackerCP = 0
