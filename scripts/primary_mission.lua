@@ -1,11 +1,11 @@
--- Change path to where you have the round_count.txt file stored --
 Obslua = Obslua or require("obslua")
 local Global = require("global_variables")
-local file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/primary_mission.txt"
 local change_up_hotkey_id = Obslua.OBS_INVALID_HOTKEY_ID
 local change_down_hotkey_id = Obslua.OBS_INVALID_HOTKEY_ID
+-- Change paths accordingly --
+local file_path = "C:/Users/leona/OneDrive/Documents/Code/Warhammer_OBS_Sources/data/primary_mission.txt"
 
--- Reads the text file round_count.txt and increments its value by 1 --
+-- Reads the text file primary_mission.txt and increments its primary up --
 local function change_primary_mission_up()
     local file = io.open(file_path, "w")
     if not file then
@@ -23,6 +23,7 @@ local function on_change_primary_mission_up_hotkey(pressed)
     change_primary_mission_up()
 end
 
+-- Reads the text file primary_mission.txt and decrements its primary down --
 local function change_primary_mission_down()
     local file = io.open(file_path, "w")
     if not file then
